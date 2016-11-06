@@ -240,3 +240,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/platforms/
+/platforms/android/assets/www/app/templates
+/platforms/android/assets/www/lib/ion-md-input/js
