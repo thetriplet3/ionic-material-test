@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "ionic": "1.3.0",
-    "ionic-material": "0.4.2"
+    "ionic-material": "0.4.2",
+    "ion-md-input": "1.0.4"
   }
 }
