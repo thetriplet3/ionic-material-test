@@ -25,11 +25,30 @@ angular.module('material', ['ionic', 'ionic-material', 'ionMdInput'])
 .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-        .state('login', {
+        .state('app', {
+            url: "/app",
+            abstract: true,
+            templateUrl: "app/templates/menu.html"
+        })
+
+        .state('app.login', {
             url: "/login",
-            templateUrl: "app/templates/login.html"
+            views: {
+                'menuContent': {
+                    templateUrl: 'app/templates/login.html'
+                }
+            }
+        })
+
+        .state('app.home', {
+            url: '/home',
+            views: {
+                'menuContent': {
+                    templateUrl: 'app/templates/home.html'
+                }
+            }
         });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/app/login');
 });
