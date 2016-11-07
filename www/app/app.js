@@ -4,13 +4,13 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('material', ['ionic', 'ionic-material', 'ionMdInput'])
+angular.module('material', ['ionic', 'ionic-material', 'ionMdInput', 'material.controllers'])
 
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
-        if (cordova.platformId === "ios" && window.cordova && window.cordova.plugins.Keyboard) {
+        /*if (cordova.platformId === "ios" && window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             cordova.plugins.Keyboard.disableScroll(true);
 
@@ -18,7 +18,7 @@ angular.module('material', ['ionic', 'ionic-material', 'ionMdInput'])
         if (window.StatusBar) {
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
-        }
+        }*/
     });
 })
 
@@ -35,7 +35,8 @@ angular.module('material', ['ionic', 'ionic-material', 'ionMdInput'])
             url: "/login",
             views: {
                 'menuContent': {
-                    templateUrl: 'app/templates/login.html'
+                    templateUrl: 'app/templates/login.html',
+                    controller: 'LoginCtrl'
                 }
             }
         })
@@ -44,7 +45,8 @@ angular.module('material', ['ionic', 'ionic-material', 'ionMdInput'])
             url: '/home',
             views: {
                 'menuContent': {
-                    templateUrl: 'app/templates/home.html'
+                    templateUrl: 'app/templates/home.html',
+                    controller: 'HomeCtrl'
                 }
             }
         });
